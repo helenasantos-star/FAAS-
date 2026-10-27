@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Filme: vaporização, atomização e excitação</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f5f7fa,#10151c);--surface:light-dark(#fff,#1a2029);--ink:light-dark(#1b2530,#edf2f7);--muted:light-dark(#526172,#b4c0ce);--line:light-dark(#ced7e1,#394655);--blue:light-dark(#2877aa,#72c4f2);--orange:light-dark(#c25b2c,#ff9c67);--gold:light-dark(#bd8700,#ffd35b);--green:light-dark(#23815e,#74d7ab);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}main{max-width:1220px;margin:auto;padding:26px 24px 36px}h1{margin:0 0 7px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.03em;line-height:1.15}p{line-height:1.55}.intro{margin:0;max-width:850px;color:var(--muted)}.stage-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:19px 0 10px}.stage-chip{background:color-mix(in srgb,var(--blue) 16%,var(--surface));border-radius:999px;padding:7px 13px;font-weight:650}.phase-caption{color:var(--muted)}.movie{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface)}svg{display:block;width:100%;height:auto}svg text{font-family:inherit;fill:var(--ink)}.label{font-size:20px;font-weight:650}.sub{font-size:16px;fill:var(--muted)}.tiny{font-size:14px;fill:var(--muted)}.zone{font-size:14px;font-weight:700;letter-spacing:.08em;fill:var(--muted)}.explain{padding:15px 20px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px}.explain p{margin:0}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.legend span{white-space:nowrap}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:14px}.controls button{border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);font:inherit;padding:10px 14px;cursor:pointer}.controls button.primary{background:var(--blue);border-color:var(--blue);color:light-dark(white,#10151c);font-weight:650}.controls input{flex:1 1 210px;min-width:150px;accent-color:var(--blue)}.time{font-variant-numeric:tabular-nums;color:var(--muted);min-width:88px;text-align:right}.note{color:var(--muted);font-size:.9rem;margin:10px 1px 0}.level{stroke:var(--line);stroke-width:4}.beam{stroke:var(--gold);stroke-width:5;stroke-dasharray:14 9;opacity:.55}.photon{fill:var(--gold);stroke:var(--ink);stroke-width:1.5}.electron{fill:var(--blue);stroke:var(--surface);stroke-width:3}.bond{stroke:var(--ink);stroke-width:5;stroke-linecap:round}.atomM{fill:var(--blue);stroke:var(--ink);stroke-width:2}.atomX{fill:var(--orange);stroke:var(--ink);stroke-width:2}.motion-line{stroke:var(--muted);stroke-width:2;stroke-dasharray:5 7;fill:none;opacity:.5}.heat-line{stroke:var(--orange);stroke-width:4;stroke-linecap:round;fill:none;opacity:.7}.energy-arrow{stroke:var(--blue);stroke-width:4;fill:none}.emit-arrow{stroke:var(--green);stroke-width:4;fill:none}.soft{opacity:.2}.show{opacity:1}.small-label{font-size:17px;font-weight:600}.caption-strong{font-weight:650}@media(max-width:700px){main{padding:18px 12px 26px}.explain{grid-template-columns:1fr;padding:13px 14px}.legend{gap:8px}.sub{font-size:19px}.tiny{font-size:18px}.zone{font-size:14px}.controls button{padding:10px 12px}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Filme molecular: da vaporização à excitação</h1>
+  <p class="intro">Acompanhe uma espécie da amostra seca: ela vaporiza, a molécula se rompe, o átomo absorve luz e o elétron retorna. Os controles permitem pausar e rever cada instante.</p>
+  <div class="stage-head"><span class="stage-chip" id="phase">Aquecimento</span><span class="phase-caption" id="phase-caption">As partículas do resíduo começam a vibrar com o calor.</span></div>
+  <section class="movie" aria-label="Animação contínua das transformações da amostra">
+  <svg id="film" viewBox="0 0 1100 570" role="img" aria-labelledby="film-title film-desc">
+    <title id="film-title">Filme da vaporização, atomização e excitação de um átomo</title>
+    <desc id="film-desc">Uma molécula se desprende do resíduo aquecido, sobe como vapor, dissocia-se em átomos. Um fóton é absorvido pelo átomo M, seu elétron sobe de nível e depois retorna emitindo outro fóton.</desc>
+    <defs>
+      <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--blue)"/></marker>
+      <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--green)"/></marker>
+      <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--gold)"/></marker>
+    </defs>
+    <text class="zone" x="145" y="50" text-anchor="middle">RESÍDUO SECO</text><text class="zone" x="480" y="50" text-anchor="middle">VAPOR MOLECULAR</text><text class="zone" x="700" y="50" text-anchor="middle">ÁTOMO LIVRE</text><text class="zone" x="955" y="50" text-anchor="middle">ENERGIA DO ELÉTRON</text>
+    <path class="motion-line" d="M235 250C320 170 375 145 430 140"/><path class="motion-line" d="M550 180C610 165 640 170 673 205"/>
+    <line x1="55" y1="450" x2="760" y2="450" stroke="var(--line)" stroke-width="3"/><text class="sub" x="90" y="482">material condensado</text>
+    <g id="heat" opacity="0"><path class="heat-line" d="M105 425Q90 405 105 385T105 345"/><path class="heat-line" d="M175 425Q160 405 175 385T175 345"/><path class="heat-line" d="M245 425Q230 405 245 385T245 345"/><text class="sub" x="175" y="320" text-anchor="middle">calor</text></g>
+    <g id="cluster">
+      <circle class="atomM" cx="104" cy="415" r="24"/><circle class="atomX" cx="143" cy="415" r="24"/><line class="bond" x1="126" y1="415" x2="121" y2="415"/>
+      <circle class="atomX" cx="179" cy="414" r="24"/><circle class="atomM" cx="218" cy="414" r="24"/>
+      <circle class="atomM" cx="257" cy="414" r="24"/><circle class="atomX" cx="296" cy="414" r="24"/>
+      <circle class="atomX" cx="126" cy="373" r="19"/><circle class="atomM" cx="167" cy="373" r="19"/><circle class="atomM" cx="208" cy="373" r="19"/><circle class="atomX" cx="249" cy="373" r="19"/>
+      <circle class="atomM" cx="146" cy="337" r="16"/><circle class="atomX" cx="187" cy="337" r="16"/><circle class="atomX" cx="228" cy="337" r="16"/>
+    </g>
+    <g id="traveler" opacity="0">
+      <line id="travelBond" class="bond" x1="-34" y1="0" x2="34" y2="0"/>
+      <circle id="travelM" class="atomM" cx="-34" cy="0" r="28"/><circle id="travelX" class="atomX" cx="34" cy="0" r="28"/>
+      <text id="travelMText" x="-34" y="8" text-anchor="middle" font-size="22" font-weight="700">M</text><text id="travelXText" x="34" y="8" text-anchor="middle" font-size="22" font-weight="700">X</text>
+    </g>
+    <g id="atom">
+      <circle cx="690" cy="250" r="99" fill="none" stroke="var(--blue)" stroke-width="2" stroke-dasharray="5 8" opacity=".65"/>
+      <circle cx="690" cy="250" r="59" fill="none" stroke="var(--blue)" stroke-width="2" stroke-dasharray="5 8" opacity=".45"/>
+      <circle cx="690" cy="250" r="36" fill="var(--blue)"/><text x="690" y="258" text-anchor="middle" font-size="25" font-weight="750">M</text>
+      <circle id="atomElectron" class="electron" cx="690" cy="191" r="12"/>
+      <text class="small-label" x="690" y="375" text-anchor="middle">átomo de analito</text>
+    </g>
+    <g id="photonIn" opacity="0"><path d="M0 0h28l10-18 14 36 14-36 14 36 10-18h24" fill="none" stroke="var(--gold)" stroke-width="5"/><circle class="photon" cx="0" cy="0" r="10"/></g>
+    <g id="photonOut" opacity="0"><path d="M0 0h28l10-18 14 36 14-36 14 36 10-18h24" fill="none" stroke="var(--green)" stroke-width="5"/><circle cx="0" cy="0" r="10" fill="var(--green)" stroke="var(--ink)" stroke-width="1.5"/></g>
+    <line id="beam" class="beam" x1="390" y1="250" x2="690" y2="250" opacity="0"/><text id="beamLabel" class="tiny" x="520" y="220" text-anchor="middle" opacity="0">fóton incidente: hν</text>
+    <g id="levels" opacity="0">
+      <text class="small-label" x="915" y="100" text-anchor="middle">Dois níveis de energia</text>
+      <line class="level" x1="845" y1="175" x2="1015" y2="175"/><line class="level" x1="845" y1="355" x2="1015" y2="355"/>
+      <text class="tiny" x="930" y="153" text-anchor="middle">excitado</text><text class="tiny" x="930" y="388" text-anchor="middle">fundamental</text>
+      <circle id="levelElectron" class="electron" cx="930" cy="355" r="12"/>
+      <path d="M1000 340V195" class="energy-arrow" marker-end="url(#arrowBlue)"/><path d="M970 195V340" class="emit-arrow" marker-end="url(#arrowGreen)"/>
+      <text class="tiny" x="1001" y="270" text-anchor="middle" transform="rotate(-90 1001 270)">absorve</text><text class="tiny" x="966" y="270" text-anchor="middle" transform="rotate(-90 966 270)">retorna</text>
+    </g>
+    <g id="particles" opacity="0">
+      <circle class="atomM" cx="0" cy="0" r="13"/><circle class="atomM" cx="0" cy="0" r="13"/><circle class="atomM" cx="0" cy="0" r="13"/><circle class="atomM" cx="0" cy="0" r="13"/>
+    </g>
+    <text class="tiny" x="70" y="535">M = elemento analisado</text><circle cx="53" cy="530" r="9" fill="var(--blue)"/><text class="tiny" x="290" y="535">X = outro fragmento</text><circle cx="273" cy="530" r="9" fill="var(--orange)"/>
+  </svg>
+  <div class="explain"><p id="narration" aria-live="polite"></p><div class="legend"><span><i class="dot" style="background:var(--blue)"></i>átomo M</span><span><i class="dot" style="background:var(--orange)"></i>fragmento X</span><span><i class="dot" style="background:var(--gold)"></i>fóton incidente</span></div></div>
+  </section>
+  <div class="controls"><button id="play" class="primary" type="button">▶ Reproduzir filme</button><button id="restart" type="button">↺ Do início</button><input id="scrub" type="range" min="0" max="24000" value="0" step="50" aria-label="Posição no filme"><span class="time" id="time">00:00 / 00:24</span></div>
+  <p class="note">Representação didática, fora de escala. O átomo é mostrado em um modelo de níveis de energia. Na absorção atômica, o sinal analítico é a diminuição da luz transmitida; o fóton verde emitido na animação ilustra a desexcitação e não é o sinal medido.</p>
+</main>
+<script>
+(()=>{
+ const duration=24000,film=document.getElementById('film'),slider=document.getElementById('scrub'),play=document.getElementById('play');let time=0,playing=false,last=0,raf=0,lastPhase=-1;
+ const $=id=>document.getElementById(id),clamp=x=>Math.max(0,Math.min(1,x)),ease=(a,b,x)=>{let u=clamp((x-a)/(b-a));return u*u*(3-2*u)},mix=(a,b,p)=>a+(b-a)*p;
+ const phases=[
+  {at:0,name:'Aquecimento',caption:'O resíduo seco recebe calor; as partículas vibram cada vez mais.',text:'O filme começa dentro do material condensado. O calor aumenta a vibração das partículas; uma molécula M–X da amostra será a que se desprende.'},
+  {at:3000,name:'Vaporização',caption:'A molécula se desprende e sobe para a fase gasosa.',text:'A espécie M–X deixa o resíduo aquecido e se afasta das demais. Isso é vaporização: a amostra passa do sólido para o vapor molecular.'},
+  {at:9000,name:'Molécula no vapor',caption:'M–X se desloca livremente na fase gasosa.',text:'A molécula gasosa está livre do resíduo, mas M ainda está ligado a X. Vaporização e atomização são etapas diferentes.'},
+  {at:11000,name:'Atomização',caption:'A ligação M–X se rompe; os fragmentos se afastam.',text:'A energia térmica dissocia a molécula. M torna-se um átomo livre do analito; X é o outro fragmento. Os átomos passam a se mover na fase gasosa.'},
+  {at:16500,name:'Átomo livre',caption:'O átomo M está na fase gasosa, inicialmente no nível fundamental.',text:'O átomo livre M pode interagir com a radiação. O diagrama à direita acompanha o estado de energia do elétron.'},
+  {at:18000,name:'Absorção e excitação',caption:'Um fóton de energia adequada é absorvido; o elétron sobe de nível.',text:'Quando a energia do fóton coincide com a diferença entre níveis (ΔE = hν), o átomo absorve o fóton e passa ao estado excitado M*. O fóton incidente desaparece do feixe.'},
+  {at:21400,name:'Desexcitação',caption:'O elétron retorna ao nível fundamental e o átomo emite um fóton.',text:'Depois de um breve intervalo, o átomo pode retornar a um estado de menor energia e emitir um fóton. Essa emissão ilustra o retorno; o sinal da absorção atômica continua sendo a luz transmitida que foi atenuada.'}
+ ];
+ function phaseIndex(t){let n=0;for(let j=1;j<phases.length;j++)if(t>=phases[j].at)n=j;return n}
+ function showPhase(n){if(n===lastPhase)return;lastPhase=n;$('phase').textContent=phases[n].name;$('phase-caption').textContent=phases[n].caption;$('narration').textContent=phases[n].text}
+ function setXY(el,x,y){el.setAttribute('transform',`translate(${x.toFixed(1)} ${y.toFixed(1)})`)}
+ function draw(t){
+  const warm=ease(0,5000,t),detach=ease(2500,8500,t),split=ease(11000,15000,t),settle=ease(14500,17700,t),photon=ease(18000,19000,t),returning=ease(21400,22400,t),hold=ease(19000,21400,t)*(1-returning);
+  const vib=warm*(1-detach),targetX=mix(205,480,detach)+Math.cos(t/82)*8*vib,targetY=mix(383,245,detach)+Math.sin(t/71)*8*vib;
+  $('heat').setAttribute('opacity',String(clamp(warm*1.2)));
+  const clusters=[...$('cluster').children];clusters.forEach((el,i)=>{if(el.tagName.toLowerCase()!=='circle')return;const amp=2+vib*9,phase=t/105+(i*1.73);el.setAttribute('cy',String(Number(el.dataset.y||(el.dataset.y=el.getAttribute('cy')))+Math.sin(phase)*amp));el.setAttribute('cx',String(Number(el.dataset.x||(el.dataset.x=el.getAttribute('cx')))+Math.cos(phase*.8)*amp*.45))});
+  const g=$('traveler');g.setAttribute('opacity','1');setXY(g,targetX,targetY);
+  const mx=mix(-34,310,settle),xx=mix(34,-140,settle),stretch=ease(11000,14500,t);const separation=stretch*100;
+  $('travelM').setAttribute('cx',String(mx-separation));$('travelX').setAttribute('cx',String(xx+separation));$('travelMText').setAttribute('x',String(mx-separation));$('travelXText').setAttribute('x',String(xx+separation));
+  $('travelBond').setAttribute('x1',String(mx-separation+25));$('travelBond').setAttribute('x2',String(xx+separation-25));$('travelBond').setAttribute('opacity',String(1-stretch));
+  $('travelM').setAttribute('r',String(28+settle*8));$('travelX').setAttribute('r',String(28+settle*2));
+  $('beam').setAttribute('opacity',String(ease(17800,18200,t)*(1-ease(18900,19300,t))));$('beamLabel').setAttribute('opacity',String(ease(17800,18200,t)*(1-ease(19400,19800,t))));$('levels').setAttribute('opacity',String(ease(16500,17400,t)));
+  const up=ease(18200,19000,t),down=ease(21400,22400,t);const excited=clamp(up-down);
+  $('levelElectron').setAttribute('cy',String(mix(355,175,excited)));$('atomElectron').setAttribute('cy',String(mix(191,151,excited)));
+  const pin=clamp((t-18000)/900);setXY($('photonIn'),mix(405,615,pin),250);$('photonIn').setAttribute('opacity',String(ease(17900,18100,t)*(1-ease(18850,19100,t))));
+  const pout=clamp((t-21600)/1500);setXY($('photonOut'),mix(735,865,pout),250);$('photonOut').setAttribute('opacity',String(ease(21500,21700,t)*(1-ease(22900,23200,t))));
+  const atomOpacity=ease(14200,16500,t);$('atom').setAttribute('opacity',String(atomOpacity));$('travelM').setAttribute('opacity',String(1-atomOpacity));$('travelMText').setAttribute('opacity',String(1-atomOpacity));
+  const ps=[...$('particles').children];ps.forEach((el,i)=>{const q=clamp((t-(15000+i*250))/3200),x=490+i*29+Math.sin(t/330+i*2)*10,y=195+((t/65+i*96)%220);el.setAttribute('cx',String(x));el.setAttribute('cy',String(y));el.setAttribute('opacity',String(atomOpacity*(1-q*.25)))});$('particles').setAttribute('opacity',String(atomOpacity*.8));
+  const n=phaseIndex(t);showPhase(n);slider.value=String(t);$('time').textContent=`00:${String(Math.floor(t/1000)).padStart(2,'0')} / 00:24`;
+ }
+ function tick(now){if(!playing)return;if(!last)last=now;time+=now-last;last=now;if(time>=duration){time=duration;playing=false;play.textContent='▶ Reproduzir novamente';last=0}draw(time);if(playing)raf=requestAnimationFrame(tick)}
+ play.addEventListener('click',()=>{if(playing){playing=false;cancelAnimationFrame(raf);last=0;play.textContent='▶ Continuar filme';return}if(time>=duration)time=0;playing=true;play.textContent='❚❚ Pausar';last=0;raf=requestAnimationFrame(tick)});
+ $('restart').addEventListener('click',()=>{playing=false;cancelAnimationFrame(raf);time=0;last=0;play.textContent='▶ Reproduzir filme';draw(time)});
+ slider.addEventListener('input',()=>{playing=false;cancelAnimationFrame(raf);time=Number(slider.value);last=0;play.textContent=time>=duration?'▶ Reproduzir novamente':'▶ Continuar filme';draw(time)});
+ draw(0);
+})();
+</script>
+</body>
+</html>
+
+
+
+
